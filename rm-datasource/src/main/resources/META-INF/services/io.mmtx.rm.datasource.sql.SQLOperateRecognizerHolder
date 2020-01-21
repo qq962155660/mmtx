@@ -1,0 +1,2 @@
+io.mmtx.rm.datasource.sql.druid.MySqlOperateRecognizerHolder
+io.mmtx.rm.datasource.sql.druid.oracle.OracleOperateRecognizerHolder

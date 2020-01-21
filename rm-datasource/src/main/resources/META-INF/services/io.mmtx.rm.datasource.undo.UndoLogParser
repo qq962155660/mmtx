@@ -1,0 +1,4 @@
+io.mmtx.rm.datasource.undo.parser.FastjsonUndoLogParser
+io.mmtx.rm.datasource.undo.parser.JacksonUndoLogParser
+io.mmtx.rm.datasource.undo.parser.ProtostuffUndoLogParser
+io.mmtx.rm.datasource.undo.parser.KryoUndoLogParser

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package io.mmtx.protocol.protobuf;
+
+import "branchRegisterRequest.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "GlobalLockQueryRequest";
+option java_package = "io.mmtx.codec.protobuf.generated";
+
+message GlobalLockQueryRequestProto {
+    BranchRegisterRequestProto branchRegisterRequest =1;
+}

@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mmtx-server
+  namespace: default
+  labels:
+    k8s-app: mmtx-server
+spec:
+  type: NodePort
+  ports:
+    - port: 8091
+      nodePort: 30091
+      protocol: TCP
+      name: http
+  selector:
+    k8s-app: mmtx-server
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mmtx-server
+  namespace: default
+  labels:
+    k8s-app: mmtx-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: mmtx-server
+  template:
+    metadata:
+      labels:
+        k8s-app: mmtx-server
+    spec:
+      containers:
+        - name: mmtx-server
+          image: docker.io/mmtxio/mmtx-server:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MMTX_PORT
+              value: "8091"
+            - name: STORE_MODE
+              value: file
+          ports:
+            - name: http
+              containerPort: 8091
+              protocol: TCP

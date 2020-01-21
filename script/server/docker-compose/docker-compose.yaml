@@ -1,0 +1,10 @@
+version: "3"
+services:
+  mmtx-server:
+    image: mmtxio/mmtx-server
+    hostname: mmtx-server
+    ports:
+      - "8091:8091"
+    environment:
+      - MMTX_PORT=8091
+      - STORE_MODE=file
