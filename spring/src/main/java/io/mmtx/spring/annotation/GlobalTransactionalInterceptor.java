@@ -75,7 +75,7 @@ public class GlobalTransactionalInterceptor implements ConfigurationChangeListen
         Method specificMethod = ClassUtils.getMostSpecificMethod(methodInvocation.getMethod(), targetClass);
         final Method method = BridgeMethodResolver.findBridgedMethod(specificMethod);
 
-        final GlobalTransactional globalTransactionalAnnotation = getAnnotation(method, GlobalTransactional.class);
+        final LcnTransactional globalTransactionalAnnotation = getAnnotation(method, LcnTransactional.class);
         final GlobalLock globalLockAnnotation = getAnnotation(method, GlobalLock.class);
         if (!disable && globalTransactionalAnnotation != null) {
             return handleGlobalTransaction(methodInvocation, globalTransactionalAnnotation);
@@ -101,7 +101,7 @@ public class GlobalTransactionalInterceptor implements ConfigurationChangeListen
     }
 
     private Object handleGlobalTransaction(final MethodInvocation methodInvocation,
-                                           final GlobalTransactional globalTrxAnno) throws Throwable {
+                                           final LcnTransactional globalTrxAnno) throws Throwable {
         try {
             return transactionalTemplate.execute(new TransactionalExecutor() {
                 @Override

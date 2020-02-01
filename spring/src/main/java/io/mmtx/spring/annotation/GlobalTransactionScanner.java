@@ -265,7 +265,7 @@ public class GlobalTransactionScanner extends AbstractAutoProxyCreator
                 }
                 Method[] methods = clazz.getMethods();
                 for (Method method : methods) {
-                    GlobalTransactional trxAnno = method.getAnnotation(GlobalTransactional.class);
+                    LcnTransactional trxAnno = method.getAnnotation(LcnTransactional.class);
                     if (trxAnno != null) {
                         return true;
                     }
@@ -280,7 +280,7 @@ public class GlobalTransactionScanner extends AbstractAutoProxyCreator
         return false;
     }
 
-    private MethodDesc makeMethodDesc(GlobalTransactional anno, Method method) {
+    private MethodDesc makeMethodDesc(LcnTransactional anno, Method method) {
         return new MethodDesc(anno, method);
     }
 

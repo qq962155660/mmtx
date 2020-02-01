@@ -30,11 +30,11 @@ public class MethodDescTest {
     private static final GlobalTransactionScanner GLOBAL_TRANSACTION_SCANNER = new GlobalTransactionScanner(
         "global-trans-scanner-test");
     private static Method method = null;
-    private static GlobalTransactional transactional = null;
+    private static LcnTransactional transactional = null;
 
     public MethodDescTest() throws NoSuchMethodException {
         method = MockBusiness.class.getDeclaredMethod("doBiz", String.class);
-        transactional = method.getAnnotation(GlobalTransactional.class);
+        transactional = method.getAnnotation(LcnTransactional.class);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class MethodDescTest {
 
     private MethodDesc getMethodDesc() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         //call the private method
-        Method m = GlobalTransactionScanner.class.getDeclaredMethod("makeMethodDesc", GlobalTransactional.class,
+        Method m = GlobalTransactionScanner.class.getDeclaredMethod("makeMethodDesc", LcnTransactional.class,
             Method.class);
         m.setAccessible(true);
         return (MethodDesc)m.invoke(GLOBAL_TRANSACTION_SCANNER, transactional, method);
@@ -81,7 +81,7 @@ public class MethodDescTest {
      * the type mock business
      */
     private static class MockBusiness {
-        @GlobalTransactional(timeoutMills = 300000, name = "busi-doBiz")
+        @LcnTransactional(timeoutMills = 300000, name = "busi-doBiz")
         public String doBiz(String msg) {
             return "hello " + msg;
         }

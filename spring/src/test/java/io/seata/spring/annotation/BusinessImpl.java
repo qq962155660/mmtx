@@ -25,7 +25,7 @@ public class BusinessImpl implements Business {
     private static final Logger LOGGER = LoggerFactory.getLogger(BusinessImpl.class);
 
     @Override
-    @GlobalTransactional(timeoutMills = 300000, name = "busi-doBiz")
+    @LcnTransactional(timeoutMills = 300000, name = "busi-doBiz")
     public String doBiz(String msg) {
         LOGGER.info("Business doBiz");
         return "hello " + msg;

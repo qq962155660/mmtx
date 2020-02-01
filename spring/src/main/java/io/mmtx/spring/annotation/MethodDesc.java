@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
  * @author slievrly
  */
 public class MethodDesc {
-    private GlobalTransactional transactionAnnotation;
+    private LcnTransactional transactionAnnotation;
     private Method method;
 
     /**
@@ -32,7 +32,7 @@ public class MethodDesc {
      * @param transactionAnnotation the transaction annotation
      * @param method                the method
      */
-    public MethodDesc(GlobalTransactional transactionAnnotation, Method method) {
+    public MethodDesc(LcnTransactional transactionAnnotation, Method method) {
         this.transactionAnnotation = transactionAnnotation;
         this.method = method;
     }
@@ -42,7 +42,7 @@ public class MethodDesc {
      *
      * @return the transaction annotation
      */
-    public GlobalTransactional getTransactionAnnotation() {
+    public LcnTransactional getTransactionAnnotation() {
         return transactionAnnotation;
     }
 
@@ -51,7 +51,7 @@ public class MethodDesc {
      *
      * @param transactionAnnotation the transaction annotation
      */
-    public void setTransactionAnnotation(GlobalTransactional transactionAnnotation) {
+    public void setTransactionAnnotation(LcnTransactional transactionAnnotation) {
         this.transactionAnnotation = transactionAnnotation;
     }
 
