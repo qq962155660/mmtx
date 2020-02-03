@@ -121,7 +121,8 @@
                             <name>mmtx-server</name>
                             <jvmSettings>
                                 <extraArguments>
-                                    <extraArgument>-server</extraArgument>
+                                <!--     
+                                	<extraArgument>-server</extraArgument>
                                     <extraArgument>-Xmx2048m</extraArgument>
                                     <extraArgument>-Xms2048m</extraArgument>
                                     <extraArgument>-Xmn1024m</extraArgument>
@@ -130,6 +131,16 @@
                                     <extraArgument>-XX:MetaspaceSize=128m</extraArgument>
                                     <extraArgument>-XX:MaxMetaspaceSize=256m</extraArgument>
                                     <extraArgument>-XX:MaxDirectMemorySize=1024m</extraArgument>
+                                   -->
+                                    <extraArgument>-server</extraArgument>
+                                    <extraArgument>-Xmx512m</extraArgument>
+                                    <extraArgument>-Xms512m</extraArgument>
+                                    <extraArgument>-Xmn256m</extraArgument>
+                                    <extraArgument>-Xss512k</extraArgument>
+                                    <extraArgument>-XX:SurvivorRatio=10</extraArgument>
+                                    <extraArgument>-XX:MetaspaceSize=32m</extraArgument>
+                                    <extraArgument>-XX:MaxMetaspaceSize=64m</extraArgument>
+                                    <extraArgument>-XX:MaxDirectMemorySize=512m</extraArgument>
                                     <extraArgument>-XX:-OmitStackTraceInFastThrow</extraArgument>
                                     <extraArgument>-XX:-UseAdaptiveSizePolicy</extraArgument>
                                     <extraArgument>-XX:+HeapDumpOnOutOfMemoryError</extraArgument>
