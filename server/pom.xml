@@ -140,7 +140,7 @@
                                     <extraArgument>-XX:SurvivorRatio=10</extraArgument>
                                     <extraArgument>-XX:MetaspaceSize=32m</extraArgument>
                                     <extraArgument>-XX:MaxMetaspaceSize=64m</extraArgument>
-                                    <extraArgument>-XX:MaxDirectMemorySize=512m</extraArgument>
+                                    <extraArgument>-XX:MaxDirectMemorySize=1024m</extraArgument>
                                     <extraArgument>-XX:-OmitStackTraceInFastThrow</extraArgument>
                                     <extraArgument>-XX:-UseAdaptiveSizePolicy</extraArgument>
                                     <extraArgument>-XX:+HeapDumpOnOutOfMemoryError</extraArgument>

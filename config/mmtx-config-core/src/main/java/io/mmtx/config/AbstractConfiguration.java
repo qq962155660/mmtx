@@ -104,6 +104,7 @@ public abstract class AbstractConfiguration implements Configuration {
 
     @Override
     public boolean getBoolean(String dataId, boolean defaultValue) {
+    	System.out.println("dataId====="+dataId);
         return getBoolean(dataId, defaultValue, DEFAULT_CONFIG_TIMEOUT);
     }
 
