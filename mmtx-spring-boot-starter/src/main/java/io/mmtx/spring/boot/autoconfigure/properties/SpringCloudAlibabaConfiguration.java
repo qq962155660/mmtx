@@ -62,7 +62,9 @@ public class SpringCloudAlibabaConfiguration implements ApplicationContextAware 
                 LOGGER.warn("{} is null, please set its value", SPRING_APPLICATION_NAME_KEY);
             }
             txServiceGroup = applicationId + DEFAULT_SPRING_CLOUD_SERVICE_GROUP_POSTFIX;
+           
         }
+       // LOGGER.info("group:{}",txServiceGroup);
         return txServiceGroup;
     }
 

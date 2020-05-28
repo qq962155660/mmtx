@@ -90,6 +90,8 @@ public class Server {
 
         try {
             rpcServer.init();
+            rpcServer.destroy();
+            LOGGER.info("server destroy...");
         } catch (Throwable e) {
             LOGGER.error("rpcServer init error:{}", e.getMessage(), e);
             System.exit(-1);

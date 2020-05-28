@@ -51,7 +51,7 @@ public class ConnectionProxy extends AbstractConnectionProxy {
         ConfigurationKeys.CLIENT_REPORT_RETRY_COUNT, DEFAULT_REPORT_RETRY_COUNT);
 
     public static final boolean IS_REPORT_SUCCESS_ENABLE = ConfigurationFactory.getInstance().getBoolean(
-        ConfigurationKeys.CLIENT_REPORT_SUCCESS_ENABLE, true);
+        ConfigurationKeys.CLIENT_REPORT_SUCCESS_ENABLE, false);
 
     private final static LockRetryPolicy LOCK_RETRY_POLICY = new LockRetryPolicy();
 

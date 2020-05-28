@@ -9,6 +9,7 @@ LCN名称是由早期版本的LCN框架命名，在设计框架之初的框架�
 
 ### 打包
 mvn clean install -DskipTests=true -U
+mvn clean install -DskipTests=true -P release-mmtx。
 
 ### 快速入门
 
